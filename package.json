@@ -1,0 +1,44 @@
+{
+  "name": "nodejs-practice",
+  "version": "1.0.0",
+  "description": "Stream-based CLI for converting large CSV files to JSON (and back) with upload to Google Drive",
+  "type": "module",
+  "bin": {
+    "csv-to-json": "./csvToJson.js",
+    "json-to-csv": "./jsonToCsv.js",
+    "generate-csv": "./scripts/generate-mock-csv.js"
+  },
+  "scripts": {
+    "csv-to-json": "node csvToJson.js",
+    "json-to-csv": "node jsonToCsv.js",
+    "generate": "node scripts/generate-mock-csv.js",
+    "generate:10gb": "node scripts/generate-mock-csv.js --sourceFile data/mock.csv --resultFile data/large.csv --size 10GB",
+    "convert:10gb": "node csvToJson.js --sourceFile data/large.csv --resultFile data/large.json --gzip",
+    "auth": "node scripts/google-auth.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonid-tarasyuk/nodejs-practice.git"
+  },
+  "keywords": [
+    "csv",
+    "json",
+    "streams",
+    "cli",
+    "google-drive"
+  ],
+  "author": "Leanid Tarasiuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonid-tarasyuk/nodejs-practice/issues"
+  },
+  "homepage": "https://github.com/leonid-tarasyuk/nodejs-practice#readme",
+  "dependencies": {
+    "commander": "^15.0.0",
+    "dotenv": "^18.0.7",
+    "googleapis": "^185.0.0"
+  }
+}

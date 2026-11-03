@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/*
+!data/mock.csv
+!data/sample*.csv
+mise.toml
